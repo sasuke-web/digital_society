@@ -1,0 +1,223 @@
+﻿{% extends 'Member/m_index.html' %}
+
+{% block content %}
+   <section class="content home">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <h2>Notice Grid <small class="text-muted">Welcome to Black Label Society</small></h2>
+                    </div>            
+                    <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                        
+                        
+                        
+                        <ul class="breadcrumb float-md-right">
+                            <li class="breadcrumb-item"><a href="..\dashboard\index.html"><i class="zmdi zmdi-home"></i> Black Label Society</a></li>
+                                                            <li class="breadcrumb-item">Notice</li>
+                                                                                        <li class="breadcrumb-item active">Notice Grid</li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">                
+                <div class="blog-page">
+    <div class="row">
+        <!-- <div class="col-lg-6 col-md-12">
+            <div class="card single_post">
+                <div class="body">
+                    <h3 class="m-t-0 m-b-5"><a href="detail.html">WTCR from 2018: new rules, more cars, more races</a></h3>
+                    <ul class="meta">
+                        <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: John Smith</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-label col-lime"></i>Sports</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>Comments: 3</a></li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="img-post m-b-15">
+                        <img src="..\assets\images\blog\blog-page-3.jpg" alt="Awesome Image">
+                        <div class="social_share">                            
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-facebook"></i></button>
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-twitter"></i></button>
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-instagram"></i></button>
+                        </div>
+                    </div>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                    <a href="detail.html" title="read more" class="btn btn-round btn-info">Read More</a>                        
+                </div>
+            </div>
+        </div> 
+        <div class="col-lg-6 col-md-12">
+            <div class="card single_post">
+                <div class="body">
+                    <h3 class="m-t-0 m-b-5"><a href="detail.html">CSS Timeline Examples from CodePen</a></h3>
+                    <ul class="meta">
+                        <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: John Smith</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-label col-green"></i>Web Design</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>Comments: 3</a></li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="img-post m-b-15">
+                        <img src="..\assets\images\blog\blog-page-4.jpg" alt="Awesome Image">
+                        <div class="social_share">                            
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-facebook"></i></button>
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-twitter"></i></button>
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-instagram"></i></button>
+                        </div>
+                    </div>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</p>
+                    <a href="detail.html" title="read more" class="btn btn-round btn-info">Read More</a>                        
+                </div>
+            </div>
+        </div> -->
+        <div class="col-xl-12 col-lg-12 col-md-12">
+            {% for n in n_all %}
+                <div class="card single_post">
+                <div class="body">
+                    <h3 class="m-t-0 m-b-5"><a href="detail.html">{{n.title}}</a></h3>
+                    <ul class="meta">
+                        <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: Chairman</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-clock col-red"></i>{{n.created_at}}</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-comment-eye col-blue"></i>{{n.NoticeViewCount}}</a></li>
+                    </ul>
+                    {% if n.pic or n.videofile %}
+                    <ul class="meta">
+                        <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Media Added:</a></li>
+                    {% if n.pic %}
+                        <li><a href="#"><i class="zmdi zmdi-collection-image col-blue"></i></a></li>
+                    {% endif %}
+                    {% if n.videofile %}
+                        <li><a href="#"><i class="zmdi zmdi-collection-video col-blue"></i></a></li>
+                    {% endif %}
+                    </ul>
+                    {% endif %}
+                </div>
+                <!-- <div class="body">
+                    {% if n.pic %}
+                    <div class="img-post m-b-15">
+                        <img src="{{n.pic.url}}" alt="Awesome Image">
+                    </div>
+                    {% endif %}
+
+                    {% if n.video %}
+                    <div class="img-post m-b-15">
+
+                        <video width="320" height="240" controls></video>
+
+                            <source src="{{n.video.url}}" type="video/mp4">
+                        
+                        
+                    </div>
+                    {% endif %}
+
+
+                    <p>{{n.description}}</p>
+                    <a href="detail.html" title="Edit" class="btn btn-round btn-info">Edit</a>
+                    <a href="{% url 'del-notice' pk=n.id %}" title="Delete" class="btn btn-round btn-info">Delete</a>                         -->
+                <!-- </div> -->
+                <a href="{% url 'm_all_notice_details' pk=n.id %}" title="Read More" class="btn btn-round btn-info">Read More</a>
+            </div>
+            {% endfor %}
+            <!-- <div class="row clearfix">
+                <div class="col-lg-6 col-md-12">
+                    <div class="car d single_post">
+                        <div class="body">
+                            <h3 class="m-t-0 m-b-5"><a href="detail.html">WTCR from 2018: new rules, more cars, more races</a></h3>
+                            <ul class="meta">
+                                <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: John Smith</a></li>
+                                <li><a href="#"><i class="zmdi zmdi-label col-lime"></i>Sports</a></li>
+                                <li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>Comments: 3</a></li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="img-post m-b-15">
+                                <img src="..\assets\images\blog\blog-page-3.jpg" alt="Awesome Image">
+                                <div class="social_share">
+                                    <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-facebook"></i></button>
+                                    <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-twitter"></i></button>
+                                    <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-instagram"></i></button>
+                                </div>
+                            </div>
+                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                            <a href="detail.html" title="read more" class="btn btn-round btn-info">Read More</a>                        
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-6 col-md-12">
+                    <div class="card single_post">
+                        <div class="body">
+                            <h3 class="m-t-0 m-b-5"><a href="detail.html">CSS Timeline Examples from CodePen</a></h3>
+                            <ul class="meta">
+                                <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: John Smith</a></li>
+                                <li><a href="#"><i class="zmdi zmdi-label col-green"></i>Web Design</a></li>
+                                <li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>Comments: 3</a></li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="img-post m-b-15">
+                                <img src="..\assets\images\blog\blog-page-4.jpg" alt="Awesome Image">
+                                <div class="social_share">
+                                    <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-facebook"></i></button>
+                                    <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-twitter"></i></button>
+                                    <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-instagram"></i></button>
+                                </div>
+                            </div>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</p>
+                            <a href="detail.html" title="read more" class="btn btn-round btn-info">Read More</a>                        
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!-- <div class="col-xl-4 col-lg-12 col-md-12">
+            <div class="card single_post">
+                <div class="body">
+                    <h3 class="m-t-0 m-b-5"><a href="detail.html">Apple Introduces Search Ads Basic</a></h3>
+                    <ul class="meta">
+                        <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: John Smith</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-label col-amber"></i>Technology</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>Comments: 3</a></li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="img-post m-b-15">
+                        <img src="..\assets\images\blog\blog-page-4.jpg" alt="Awesome Image">
+                        <div class="social_share">
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-facebook"></i></button>
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-twitter"></i></button>
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-instagram"></i></button>
+                        </div>
+                    </div>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal</p>
+                    <a href="detail.html" title="read more" class="btn btn-round btn-info">Read More</a>                        
+                </div>
+            </div>
+                <div class="card single_post">
+                <div class="body">
+                    <h3 class="m-t-0 m-b-5"><a href="detail.html">All photographs are accurate. None of them is the truth</a></h3>
+                    <ul class="meta">
+                        <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: John Smith</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-label col-red"></i>Photography</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>Comments: 3</a></li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="img-post m-b-15">
+                        <img src="..\assets\images\blog\blog-page-1.jpg" alt="Awesome Image">
+                        <div class="social_share">                            
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-facebook"></i></button>
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-twitter"></i></button>
+                            <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-instagram"></i></button>
+                        </div>
+                    </div>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal</p>
+                    <a href="detail.html" title="read more" class="btn btn-round btn-info">Read More</a>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+            </div>
+        </section>
+                
+{% endblock %}        
