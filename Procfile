@@ -1,0 +1,1 @@
+web: gunicorn digitalsociety.wsgi.application --log-file -
